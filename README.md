@@ -3,6 +3,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="50" height="50"/>
   <img src="https://vitejs.dev/logo.svg" alt="Vite" width="50" height="50"/>
   <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="50" height="50"/>
+  <img src="https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg/revision/latest?cb=20221026155821" &w=3840&q=75" alt="Vercel" width="50" height="50"/>
 </p>
 
 # TextUtils : Learning project
