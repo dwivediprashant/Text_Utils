@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 
-export default function PurposeButton({ mode, purpose, icon, onClick }) {
+export default function PurposeButton({ mode, purpose, text, icon, onClick }) {
   return (
     <button
       className={`${!mode ? "btn-dark " : "btn-light"} btn btn-sm m-1 `}
-      onClick={onClick}
+      onClick={() => onClick()}
+      disabled={!text}
     >
       {purpose} {icon}
     </button>
@@ -12,6 +13,6 @@ export default function PurposeButton({ mode, purpose, icon, onClick }) {
 }
 PurposeButton.propTypes = {
   icon: PropTypes.node.isRequired,
-  onclick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   purpose: PropTypes.string.isRequired,
 };

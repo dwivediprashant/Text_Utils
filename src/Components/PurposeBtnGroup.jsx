@@ -5,6 +5,7 @@ export default function PurposeBtnGroup({ text, setText, mode, showAlert }) {
       <PurposeButton
         mode={mode}
         purpose="To uppercase"
+        text={text}
         onClick={() => {
           setText(text.toUpperCase());
           showAlert({ message: "Changed to uppercase", type: "success" });
@@ -13,6 +14,7 @@ export default function PurposeBtnGroup({ text, setText, mode, showAlert }) {
       <PurposeButton
         mode={mode}
         purpose="To lowercase"
+        text={text}
         onClick={() => {
           setText(text.toLowerCase());
           showAlert({ message: "Changed to lowercase", type: "success" });
@@ -21,15 +23,34 @@ export default function PurposeBtnGroup({ text, setText, mode, showAlert }) {
       <PurposeButton
         mode={mode}
         purpose="Copy text"
+        text={text}
         icon={<i className="fa-solid fa-copy"></i>}
-        onClick={() => {
-          navigator.clipboard.writeText(text);
-          showAlert({ message: "Text copied !", type: "success" });
+        onClick={async () => {
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(text);
+              showAlert({ message: "Text copied!", type: "success" });
+            } else {
+              // Fallback for older mobile browsers
+              const textarea = document.createElement("textarea");
+              textarea.value = text;
+              document.body.appendChild(textarea);
+              textarea.select();
+              document.execCommand("copy"); //execCommand is deprecated for now but older browser supports
+              document.body.removeChild(textarea);
+              showAlert({ message: "Text copied", type: "success" });
+            }
+          } catch (error) {
+            showAlert({ message: "Failed to copy text!", type: "danger" });
+            console.error(error);
+          }
         }}
       />
+
       <PurposeButton
         mode={mode}
         purpose="Speak"
+        text={text}
         icon={<i className="fa-solid fa-volume-high"></i>}
         onClick={() => {
           const utterance = new SpeechSynthesisUtterance(text);
@@ -39,6 +60,7 @@ export default function PurposeBtnGroup({ text, setText, mode, showAlert }) {
       <PurposeButton
         mode={mode}
         purpose="Reverse"
+        text={text}
         icon={<i className="fa-solid fa-arrows-rotate"></i>}
         onClick={() => {
           setText(text.split("").reverse().join(""));
@@ -48,6 +70,7 @@ export default function PurposeBtnGroup({ text, setText, mode, showAlert }) {
       <PurposeButton
         mode={mode}
         purpose="Clear"
+        text={text}
         icon={<i className="fa-solid fa-trash"></i>}
         onClick={() => {
           setText("");
