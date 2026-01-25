@@ -8,7 +8,7 @@
 
 # TextUtils : Learning project
 
-**Live Link:** [https://text-utils-lime-rho.vercel.app/](https://text-utils-lime-rho.vercel.app/)
+**Live Link:** [http://textutils-kappa-six.vercel.app/](https://text-utils-lime-rho.vercel.app/)
 
 ---
 
@@ -20,25 +20,23 @@
 
 ### **Features**
 
-- 🔠 **Convert to Uppercase** – Quickly change your text into uppercase letters.  
-- 🔡 **Convert to Lowercase** – Instantly make all letters lowercase.  
-- 📋 **Copy Text** – Copy formatted text to clipboard in one click.  
-- 🔊 **Speak Text** – Listen to your text using the browser’s speech engine.  
-- 🔁 **Reverse Text** – Flip your text backward easily.  
-- 🧹 **Clear Text** – Remove all text instantly.  
-- 🌙 **Dark/Light Mode** – Switch between themes for comfortable reading.  
-- 🎨 **Custom Themes** – Apply personalized background and text colors.  
+- 🔠 **Convert to Uppercase** – Quickly change your text into uppercase letters.
+- 🔡 **Convert to Lowercase** – Instantly make all letters lowercase.
+- 📋 **Copy Text** – Copy formatted text to clipboard in one click.
+- 🔊 **Speak Text** – Listen to your text using the browser’s speech engine.
+- 🔁 **Reverse Text** – Flip your text backward easily.
+- 🧹 **Clear Text** – Remove all text instantly.
+- 🌙 **Dark/Light Mode** – Switch between themes for comfortable reading.
+- 🎨 **Custom Themes** – Apply personalized background and text colors.
 
 ---
 
 ### **Run Locally**
 
-   ```bash
-   git clone https://github.com/dwivediprashant/Text_Utils
-   cd textutils
-   npm install
-   npm run dev
-   http://localhost:5173
-   ```
-   
-
+```bash
+git clone https://github.com/dwivediprashant/Text_Utils
+cd textutils
+npm install
+npm run dev
+http://localhost:5173
+```
