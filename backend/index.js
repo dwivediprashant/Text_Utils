@@ -7,7 +7,7 @@ const port = process.env.PORT;
 
 //------cors config-----
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://textutils-kappa-six.vercel.app/"],
+  origin: ["http://localhost:5173", "http://textutils-kappa-six.vercel.app/"],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(express.json());
