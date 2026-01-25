@@ -8,7 +8,7 @@
 
 # TextUtils : Learning project
 
-**Live Link:** [http://textutils-kappa-six.vercel.app/](https://text-utils-lime-rho.vercel.app/)
+**Live Link:** [https://textutils-kappa-six.vercel.app](https://text-utils-lime-rho.vercel.app/)
 
 ---
 
@@ -19,6 +19,8 @@
 ---
 
 ### **Features**
+
+- 🔁 **Translate to HINDI** – Translate any language to HINDI .
 
 - 🔠 **Convert to Uppercase** – Quickly change your text into uppercase letters.
 - 🔡 **Convert to Lowercase** – Instantly make all letters lowercase.

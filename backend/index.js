@@ -27,7 +27,7 @@ app.post("/translate", async (req, res) => {
     return res.status(200).json({ success: "ok", translatedText: "" });
   }
   try {
-    const translatedText = await translate(text);
+    const translatedText = await translate(text.trim());
     return res.status(200).json({ success: "ok", translatedText });
   } catch (err) {
     return res.status(500).json({ success: "error", message: err.message });
