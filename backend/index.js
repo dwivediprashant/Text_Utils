@@ -7,10 +7,15 @@ const port = process.env.PORT;
 
 //------cors config-----
 const corsOptions = {
-  origin: ["http://localhost:5173", "http://textutils-kappa-six.vercel.app/"],
+  origin: [
+    "http://localhost:5173",
+    "https://textutils-kappa-six.vercel.app",
+    "textutils-git-main-prashants-projects-0dc8cb90.vercel.app",
+    "https://textutils-ajix40xsh-prashants-projects-0dc8cb90.vercel.app",
+  ],
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 200,
 };
 app.use(express.json());
 app.use(cors(corsOptions));
