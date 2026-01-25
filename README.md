@@ -31,12 +31,29 @@
 
 ---
 
-### **Run Locally**
+### **Run in local system**
 
 ```bash
 git clone https://github.com/dwivediprashant/Text_Utils
-cd textutils
+```
+
+- Backend setup
+
+```bash
+
+cd backend
+npm install
+npm start
+
+```
+
+- frontend setup
+
+```bash
+cd frontend
 npm install
 npm run dev
-http://localhost:5173
+
 ```
+
+- Go to browser http://localhost:5173
