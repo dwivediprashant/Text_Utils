@@ -4,7 +4,7 @@ export default function PurposeBtnGroup({
   setText,
   mode,
   showAlert,
-  translate,
+  onTranslate,
 }) {
   return (
     <div className="d-flex flex-wrap justify-content-center align-items-center">
@@ -14,11 +14,7 @@ export default function PurposeBtnGroup({
         purpose="Translate"
         text={text}
         icon={<i class="fa-solid fa-arrows-left-right"></i>}
-        onClick={async () => {
-          const translatedText = await translate(text);
-          setText(translatedText);
-          showAlert({ message: "Text Translated !", type: "success" });
-        }}
+        onClick={onTranslate}
       />
       <PurposeButton
         mode={mode}
