@@ -4,7 +4,7 @@ import Preview from "./Preview";
 import PurposeBtnGroup from "./PurposeBtnGroup";
 import ButtonGroup from "./ButtonGroup";
 
-export default function Hero({ mode, showAlert }) {
+export default function Hero({ mode, showAlert, translate }) {
   const [text, setText] = useState("");
   const handleOnChange = (evt) => {
     setText(evt.target.value);
@@ -27,9 +27,10 @@ export default function Hero({ mode, showAlert }) {
         setText={setText}
         mode={mode}
         showAlert={showAlert}
+        translate={translate}
       />
       <>
-        <Preview text={text} />
+        <Preview text={text} mode={mode} />
       </>
     </div>
   );

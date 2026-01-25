@@ -1,7 +1,25 @@
 import PurposeButton from "./PurposeButton";
-export default function PurposeBtnGroup({ text, setText, mode, showAlert }) {
+export default function PurposeBtnGroup({
+  text,
+  setText,
+  mode,
+  showAlert,
+  translate,
+}) {
   return (
     <div className="d-flex flex-wrap justify-content-center align-items-center">
+      {/* translate button  */}
+      <PurposeButton
+        mode={mode}
+        purpose="Translate"
+        text={text}
+        icon={<i class="fa-solid fa-arrows-left-right"></i>}
+        onClick={async () => {
+          const translatedText = await translate(text);
+          setText(translatedText);
+          showAlert({ message: "Text Translated !", type: "success" });
+        }}
+      />
       <PurposeButton
         mode={mode}
         purpose="To uppercase"

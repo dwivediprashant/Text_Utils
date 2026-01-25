@@ -5,8 +5,8 @@ import Hero from "./Components/Hero";
 import Navbar from "./Components/Navbar";
 import Features from "./Components/Features";
 import About from "./Components/About";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 function App() {
   const [mode, setMode] = useState(false); //false refers to normal light mode
   const [alert, setAlert] = useState({ message: "", type: "" });
@@ -30,6 +30,15 @@ function App() {
     backgroundColor: theme.backgroundColor,
     color: theme.color,
   };
+  // translate fxn
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const translate = async (text) => {
+    const { data } = await axios.post(`${API_BASE_URL}/translate`, {
+      text,
+    });
+    return data.translatedText || "";
+  };
+
   return (
     <div style={mode ? darkStyle : {}}>
       <Alert alert={alert} />
@@ -50,6 +59,7 @@ function App() {
               showAlert={showAlert}
               theme={theme}
               changeTheme={changeTheme}
+              translate={translate}
             />
           }
         />

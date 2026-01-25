@@ -1,7 +1,15 @@
 import PropTypes from "prop-types";
 
 export default function PurposeButton({ mode, purpose, text, icon, onClick }) {
-  return (
+  return purpose === "Translate" ? (
+    <button
+      className={` btn btn-md m-1 btn-danger`}
+      onClick={() => onClick()}
+      disabled={!text}
+    >
+      {purpose} {icon}
+    </button>
+  ) : (
     <button
       className={`${!mode ? "btn-dark " : "btn-light"} btn btn-sm m-1 `}
       onClick={() => onClick()}
@@ -11,6 +19,7 @@ export default function PurposeButton({ mode, purpose, text, icon, onClick }) {
     </button>
   );
 }
+
 PurposeButton.propTypes = {
   icon: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
